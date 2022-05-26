@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  mf-core:
+    build: ./
+    restart: always
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./src/:/app/src/
+    command: yarn dev
+
+ 

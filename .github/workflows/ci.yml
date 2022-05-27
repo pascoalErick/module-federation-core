@@ -28,9 +28,8 @@ jobs:
       - name: Unit Tests
         run: npm run test:coverage
 
-  docker:
-    runs-on: ubuntu-latest
-    steps:
+      # Docker build and push
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -47,4 +46,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: user/app:latest
+          tags: erickpascoal/module-federation-core:latest

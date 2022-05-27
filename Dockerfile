@@ -10,6 +10,6 @@ RUN yarn build
 
 EXPOSE 9090 
 
-CMD [ "node", "server.js" ] 
+CMD [ "node", "serve" ] 
 
 

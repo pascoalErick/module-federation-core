@@ -43,7 +43,11 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
+        id: docker_build
         uses: docker/build-push-action@v3
         with:
           push: true
           tags: erickpascoal/module-federation-core:latest
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
